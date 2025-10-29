@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Handlee', cursive;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1b1b1b;
+  padding: 10px 0;
+  border-bottom: 2px solid #333;
+  z-index: 10;
+}
+
+.navbar a {
+  color: #aaa;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.navbar a.active {
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Contenedores */
+.container {
+  background-color: #1b1b1b;
+  border-radius: 20px;
+  padding: 40px 20px;
+  width: 90%;
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* Inputs y botones */
+input, button {
+  font-family: inherit;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+/* Tarjetas */
+.card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
