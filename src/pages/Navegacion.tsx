@@ -1,10 +1,12 @@
+
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
+
 
 export const Navegacion = () => {
   return (
     <>
-      <Navbar />
+      <Navbar/> 
       <div className="container">
         <h1 className="logo">Navegación</h1>
         <h3>Incidencias</h3>
