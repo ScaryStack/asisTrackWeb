@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { Info } from "../pages/Info";
 import { Navegacion } from "../pages/Navegacion";
 
+
 export const AppRoutes = () => {
   const routes = useRoutes([
     { path: "/", element: <Login /> },

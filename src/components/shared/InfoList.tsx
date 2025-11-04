@@ -1,3 +1,6 @@
+
+
+
 export const InfoList = () => {
   const items = [
     "📩 Reportar problema",

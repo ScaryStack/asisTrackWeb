@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
+import { InfoButton } from "../components/shared/InfoButton"; 
+import { NavigationButton } from "../components/shared/NavigationButton";
+
 
 export const Home = () => {
   const [hora, setHora] = useState("");
@@ -41,6 +44,10 @@ export const Home = () => {
           <button onClick={handleMarcar}>Marcar asistencia</button>
         </Card>
       </div>
+
+      <InfoButton />
+
+      <NavigationButton />
     </>
   );
 };
