@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
-import { InfoButton } from "../components/shared/InfoButton"; 
 import { NavigationButton } from "../components/shared/NavigationButton";
+import { InfoButton } from "../components/shared/InfoButton"; 
 
 
 export const Home = () => {
   const [hora, setHora] = useState("");
   const [fecha, setFecha] = useState("");
   const [nombre, setNombre] = useState("Usuario");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const user = localStorage.getItem("usuario") || "Usuario";
@@ -28,7 +30,11 @@ export const Home = () => {
   const horas = new Date().getHours();
   const momento = horas < 12 ? "día" : horas < 18 ? "tarde" : "noche";
 
-  const handleMarcar = () => alert("✅ Asistencia marcada correctamente");
+  
+/*Navega a registrar asistencia*/
+  const handleMarcar = () => {
+    navigate("/registrar-asistencia"); 
+  };
 
   return (
     <>

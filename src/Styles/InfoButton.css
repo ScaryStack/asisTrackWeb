@@ -13,8 +13,8 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 50px;/*tamaño boton*/
+  height: 50px;/*tamaño boton*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@
 .info-button:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
-}s
+}
 
 /* Estilos para el menú desplegable */
 .info-list-overlay {
@@ -38,13 +38,44 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 350px 20px 20px 20px; /* Ajusta el padding para separar del botón */
   z-index: 999;
 }
 
 .info-list-wrapper {
   background: transparent;
-  max-width: 300px;
+  max-width: 600px; /*ancho menu desplegable*/
+}
+
+/* Estilos para agrandar el menú desplegable */
+.info-list-wrapper .card {
+  background: rgb(0, 0, 0);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-height: 350px; /* Altura más grande */
+  width: 100%;
+ 
+}
+
+.info-list-wrapper .card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list-wrapper .card li {
+  margin: 20px 0; /* Más espacio entre items */
+  padding: 15px; /* Más padding en cada item */
+  font-size: 1.7rem; /* Texto más grande */
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.info-list-wrapper .card li:hover {
+  background: #f5f5f5;
+  border-radius: 10px;
 }
