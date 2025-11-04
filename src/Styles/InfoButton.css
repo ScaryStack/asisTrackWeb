@@ -1,0 +1,50 @@
+
+
+
+.info-button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.info-button {
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+.info-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}s
+
+/* Estilos para el menú desplegable */
+.info-list-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  z-index: 999;
+}
+
+.info-list-wrapper {
+  background: transparent;
+  max-width: 300px;
+}
