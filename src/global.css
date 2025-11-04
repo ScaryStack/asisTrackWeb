@@ -15,9 +15,10 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   background-color: #1b1b1b;
-  padding: 10px 0;
+  padding: 10px 20px;
   border-bottom: 2px solid #333;
   z-index: 10;
 }
