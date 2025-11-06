@@ -40,13 +40,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 350px 20px 20px 20px; /* Ajusta el padding para separar del botón */
+  padding: 100px 20px 20px 20px; /* Ajusta el padding para separar del botón */
   z-index: 999;
 }
 
 .info-list-wrapper {
   background: transparent;
-  max-width: 600px; /*ancho menu desplegable*/
+  max-width: 400px; /*ancho menu desplegable*/
 }
 
 /* Estilos para agrandar el menú desplegable */
