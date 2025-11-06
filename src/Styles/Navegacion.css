@@ -1,0 +1,50 @@
+
+
+/* Contenedor principal */
+.navegacion-container {
+  padding: 20px;
+  max-width: 700px;
+  margin: 80px auto 0 auto;
+}
+
+/* Estilo de titulo*/
+.navegacion-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/* Estilos de los botones */
+.nav-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  flex: 1;
+}
+
+/* Efecto hover para los botones */
+.nav-button:hover {
+  background: #0056b3;
+}
+
+.nav-button.full-width {
+  width: 100%;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.buttons-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
