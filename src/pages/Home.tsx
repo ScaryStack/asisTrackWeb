@@ -39,8 +39,9 @@ export const Home = () => {
   return (
     <>
       <Navbar />
+      <h1 className="logo">AsisTrack</h1>
+
       <div className="container">
-        <h1 className="logo">AsisTrack</h1>
         <p>Buen {momento}, {nombre}. Bienvenido a AsisTrack.</p>
         <h2>{hora}</h2>
 
