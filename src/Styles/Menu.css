@@ -2,6 +2,13 @@
   position: relative;
 }
 
+.logo
+  {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ffffff;
+  }
 .menu-button {
   background: none;
   border: none;
