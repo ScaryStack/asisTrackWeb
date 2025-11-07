@@ -1,20 +1,71 @@
-
-
-.registrar-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+:root {
+  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
+  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
+  --card-bg: #ffffff; /* Blanco puro para cards */
+  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
+  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
+  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
+  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
+  --border-color: #cce7ff; /* Celeste muy claro para bordes */
+  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
 }
 
+/* Estilos para el título */
+.logo {
+  text-align: center;
+  margin: 100px 0 30px 0; 
+  color: var(--text-primary); 
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Contenedor principal */
+.mapa-card-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mapa-card-wrapper .card {
+  min-height: auto;
+  padding: 20px;
+  margin-bottom: 0;
+  background-color: var(--card-bg); 
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-color)
+}
+
+/* Título del mapa centrado dentro de la card */
+.mapa-content {
+  width: 100%;
+}
+
+.mapa-titulo-card {
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: var(--text-primary); 
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Placeholder para el mapa */
 .mapa-placeholder {
-  background: #f0f0f0;
-  height: 200px;
+  background: var(--secondary-bg); 
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   margin-bottom: 15px;
-  color: #666;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color); 
 }
 
 .botones-container {
@@ -26,33 +77,35 @@
 .boton-entrada {
   flex: 1;
   padding: 15px;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: var(--accent-color); 
+  color: white;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-weight: 500;
 }
 
 .boton-entrada:hover {
-  background: #ffffff;
+  background: var(--accent-hover); 
 }
 
 .boton-salida {
   flex: 1;
   padding: 15px;
-  background: #fefefe;
-  color: rgb(0, 0, 0);
+  background: var(--accent-color); 
+  color: white; 
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-weight: 500;
 }
 
 .boton-salida:hover {
-  background: #ffffff;
+  background: var(--accent-hover); 
 }
 
 .info-ubicacion {
@@ -61,9 +114,8 @@
 
 .info-ubicacion p {
   margin: 8px 0;
+  color: var(--text-primary); 
 }
-
-
 
 /* Estilos para ventanas emergentes */
 .modal-overlay {
@@ -80,24 +132,25 @@
 }
 
 .modal-content {
-  background: white;
+  background: var(--card-bg); 
   padding: 25px;
   border-radius: 15px;
   text-align: center;
   max-width: 300px;
   width: 90%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color); 
 }
 
 .modal-content h3 {
   margin: 0 0 15px 0;
-  color: #333;
+  color: var(--text-primary); 
   font-size: 1.3rem;
 }
 
 .modal-content p {
   margin: 0 0 20px 0;
-  color: #666;
+  color: var(--text-secondary); 
   font-size: 1rem;
 }
 
@@ -109,32 +162,34 @@
 
 .modal-btn-si {
   padding: 12px 25px;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: var(--accent-color); 
+  color: white; 
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
   flex: 1;
+  font-weight: 500;
 }
 
 .modal-btn-si:hover {
-  background: #878787;
+  background: var(--accent-hover); 
 }
 
 .modal-btn-no {
   padding: 12px 25px;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: var(--accent-color); 
+  color: white; 
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
   flex: 1;
+  font-weight: 500;
 }
 
 .modal-btn-no:hover {
-  background: #878787;
+  background: var(--accent-hover); 
 }

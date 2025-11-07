@@ -41,17 +41,20 @@ const confirmarSalida = () => {
   return (
     <>
       <Navbar />
-      <div className="container registrar-container">
-        <h1 className="logo">Registro Asistencia</h1>
-        
+      <h1 className="logo">Registro Asistencia</h1>
+
+      <div className="mapa-card-wrapper">        
         {/* Mapa */}
-        <Card title="Mapa">
+        <Card>
+          <div className="mapa-content">
+            {/* Título centrado dentro de la card */}
+            <h3 className="mapa-titulo-card">Mapa</h3>
+
           <div className="mapa-placeholder">
             <p>Mapa según ubicación actual</p>
           </div>
-        </Card>
 
-        {/* Botones de Entrada/Salida */}
+           {/* Botones de Entrada/Salida */}
         <div className="botones-container">
           <button 
             onClick={handleMarcarEntrada}
@@ -65,7 +68,11 @@ const confirmarSalida = () => {
           >
             Salida
           </button>
+          </div>
         </div>
+        </Card>
+
+       
 
         {/* Información de ubicación */}
         <Card title="Información de ubicación">
