@@ -1,0 +1,133 @@
+:root {
+  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
+  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
+  --card-bg: #ffffff; /* Blanco puro para cards */
+  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
+  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
+  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
+  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
+  --border-color: #cce7ff; /* Celeste muy claro para bordes */
+  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
+}
+
+/* Estilos para la página de Solicitudes */
+.solicitudes-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 90px auto 0 auto;
+  width: 90%;
+}
+
+.solicitudes-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+
+.card {
+  min-height: 400px;
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.card-content {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+/* Estilos para inputs de fecha */
+.date-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+/* Estilos para la hora (solo lectura) */
+.time-display {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Textarea para el motivo */
+.motivo-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+  height: 120px;
+  box-sizing: border-box;
+  font-family: inherit;
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+}
+
+/* Separador */
+.separator {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 25px 0;
+  width: 100%;
+}
+
+/* Botones */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.submit-button,
+.cancel-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  font-weight: bold;
+}
+
+.submit-button:hover,
+.cancel-button:hover {
+  background: var(--accent-hover);
+}

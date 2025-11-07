@@ -1,0 +1,100 @@
+
+
+.incidencia-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 90px auto 0 auto;
+  width: 90%;
+}
+
+.incidencia-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.incidencia-container .card {
+  min-height: 400px;
+  padding: 40px;
+  width:100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+
+.card-content {
+  width: 100%;
+  max-width: 500px; /* Mismo ancho máximo para todo */
+  margin: 0 auto; /* Centra horizontalmente */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+/* Estilos para etiquetas y campos de entrada */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Estilos para campos de entrada y textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Estilos para botones */
+.submit-button {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  max-width: 200px;
+}
+
+.cancel-button {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Efecto hover para botones */
+.submit-button:hover,
+.cancel-button:hover {
+  background: #858585;
+}
