@@ -1,23 +1,62 @@
+:root {
+  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
+  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
+  --card-bg: #ffffff; /* Blanco puro para cards */
+  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
+  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
+  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
+  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
+  --border-color: #cce7ff; /* Celeste muy claro para bordes */
+  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
+}
 
+/* Estilo del título de la tarjeta */
+.card-title {
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Contenedor principal */
 .navegacion-container {
   padding: 20px;
   max-width: 700px;
-  margin: 80px auto 0 auto;
+  margin: 60px auto 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Estilo de titulo*/
 .navegacion-logo {
   text-align: center;
-  margin-bottom: 30px;
-  color: #ffffff;
+  margin-bottom: 5px;
+  color: var(--text-primary);
   font-size: 2rem;
+}
+
+.navegacion-container .card {
+  min-height: 150px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 /* Estilos de los botones */
 .nav-button {
-  background: #007bff;
+  background: var(--accent-color);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -30,7 +69,7 @@
 
 /* Efecto hover para los botones */
 .nav-button:hover {
-  background: #0056b3;
+  background: var(--accent-hover);
 }
 
 .nav-button.full-width {
