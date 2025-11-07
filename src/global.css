@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+:root {
+  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
+  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
+  --card-bg: #ffffff; /* Blanco puro para cards */
+  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
+  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
+  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
+  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
+  --border-color: #cce7ff; /* Celeste muy claro para bordes */
+  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
+}
 
 body {
-  background-color: #111;
-  color: #fff;
-  font-family: 'Handlee', cursive;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
   margin: 0;
   min-height: 100vh;
 }
@@ -17,38 +33,41 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1b1b1b;
+  background-color: var(--card-bg); 
   padding: 10px 20px;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--border-color);
   z-index: 10;
+  box-shadow: 0 2px 8px var(--shadow-color); 
 }
 
 .navbar a {
-  color: #aaa;
+  color: var(--text-secondary);
   font-size: 1.6rem;
   text-decoration: none;
 }
 
 .navbar a.active {
-  color: #fff;
-  text-shadow: 0 0 5px #fff;
+  color: var(--accent-color); 
+  text-shadow: 0 0 5px var(--accent-color); 
 }
 
 /* Contenedores */
 .container {
-  background-color: #1b1b1b;
+  background-color: var(--card-bg); 
   border-radius: 20px;
-  padding: 40px 20px;
+  padding: 30px 20px;
   width: 90%;
   max-width: 400px;
-  margin: 80px auto;
+  margin: 30px auto;
   text-align: center;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px var(--shadow-color);
+  border: 1px solid var(--border-color); 
 }
 
 .logo {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: var(--text-primary); 
 }
 
 /* Inputs y botones */
@@ -60,28 +79,39 @@ input {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid var(--border-color); 
   margin-top: 5px;
+  background-color: var(--secondary-bg); 
+  color: var(--text-primary); 
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color); 
+  background-color: var(--card-bg); 
 }
 
 button {
   margin-top: 20px;
-  background-color: #444;
-  color: white;
+  background-color: var(--accent-color);
+  color: white; 
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #666;
+  background-color: var(--accent-hover); 
 }
 
 /* Tarjetas */
 .card {
-  background-color: #222;
+  background-color: var(--card-bg);
   padding: 20px;
   border-radius: 15px;
   margin-top: 20px;
+  border: 1px solid var(--border-color); 
+  box-shadow: 0 2px 8px var(--shadow-color); 
 }
