@@ -24,16 +24,57 @@ const handleMarcarEntrada = () => {
 
 
 const confirmarEntrada = () => {
+    // GUARDAR ENTRADA
+    const ahora = new Date();
+    const hora = ahora.getHours().toString().padStart(2, '0');
+    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+    const segundos = ahora.getSeconds().toString().padStart(2, '0');
+    const horaCompleta = `${hora}:${minutos}:${segundos}`;
+    const fechaCompleta = ahora.toISOString();
+
+    const nuevaMarcacion = {
+      id: Date.now(),
+      tipo: 'entrada',
+      fecha: fechaCompleta,
+      hora: horaCompleta,
+      ubicacion: 'Lugar de trabajo'
+    };
+
+    const marcacionesExistentes = JSON.parse(localStorage.getItem('misMarcaciones') || '[]');
+    const nuevasMarcaciones = [...marcacionesExistentes, nuevaMarcacion];
+    localStorage.setItem('misMarcaciones', JSON.stringify(nuevasMarcaciones));
+
     alert("✅ Entrada registrada correctamente");
     setShowConfirmacionEntrada(false);
   }
+
  
 const confirmarSalida = () => {
+    // GUARDAR SALIDA
+    const ahora = new Date();
+    const hora = ahora.getHours().toString().padStart(2, '0');
+    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+    const segundos = ahora.getSeconds().toString().padStart(2, '0');
+    const horaCompleta = `${hora}:${minutos}:${segundos}`;
+    const fechaCompleta = ahora.toISOString();
+
+    const nuevaMarcacion = {
+      id: Date.now(),
+      tipo: 'salida',
+      fecha: fechaCompleta,
+      hora: horaCompleta,
+      ubicacion: 'Lugar de trabajo'
+    };
+
+    const marcacionesExistentes = JSON.parse(localStorage.getItem('misMarcaciones') || '[]');
+    const nuevasMarcaciones = [...marcacionesExistentes, nuevaMarcacion];
+    localStorage.setItem('misMarcaciones', JSON.stringify(nuevasMarcaciones));
+
     alert("✅ Salida registrada correctamente");
     setShowConfirmacionSalida(false);
   };
 
-   const cancelarAccion = () => {
+  const cancelarAccion = () => {
     setShowConfirmacionEntrada(false);
     setShowConfirmacionSalida(false);
   };
