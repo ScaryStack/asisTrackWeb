@@ -1,0 +1,62 @@
+.mis-marcaciones-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 90px auto 0 auto;
+  width: 90%;
+}
+
+.mis-marcaciones-titulo {
+  text-align: center;
+  color: var(--textprimario);
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.sin-marcaciones {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px 0;
+}
+
+.marcaciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.marcacion-item {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--colorCard);
+}
+
+.marcacion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.marcacion-tipo {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.marcacion-tipo[data-tipo="entrada"] {
+  color: #10b981;
+}
+
+.marcacion-tipo[data-tipo="salida"] {
+  color: #ef4444;
+}
+
+.marcacion-fecha {
+  color: var(--textprimario);
+  font-weight: 500;
+}
+
+.marcacion-ubicacion {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
