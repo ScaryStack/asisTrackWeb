@@ -1,16 +1,15 @@
 
-
 .incidencia-container {
   padding: 20px;
   max-width: 600px;
   margin: 90px auto 0 auto;
   width: 90%;
-}
+} 
 
 .incidencia-logo {
   text-align: center;
   margin-bottom: 30px;
-  color: #ffffff;
+  color: var(--textprimario);
   font-size: 2rem;
 }
 
@@ -23,9 +22,11 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  background-color: var(--colorCard);
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  border: 1px solid var(--border-color);
 }
-
-
 
 .card-content {
   width: 100%;
@@ -42,13 +43,12 @@
   width: 100%;
 }
 
-
 /* Estilos para etiquetas y campos de entrada */
 .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--textprimario);
 }
 
 /* Estilos para campos de entrada y textarea */
@@ -56,10 +56,19 @@
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--colorBarra);
   border-radius: 5px;
   font-size: 1rem;
   resize: none;
+  background-color: var(--colorBarra);
+  color: var(--textprimario);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--colorBotones);
+  background-color: var(--colorCard);
 }
 
 .form-buttons {
@@ -72,29 +81,31 @@
 
 /* Estilos para botones */
 .submit-button {
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: var(--colorBotones) !important; /*Forzando el cambio de color*/
+  color: white;
   border: none;
   padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
   max-width: 200px;
+  transition: background-color 0.3s ease;
 }
 
 .cancel-button {
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: var(--colorBotones)!important; /*Forzando el cambio de color*/
+  color: white;
   border: none;
   padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
   max-width: 200px;
+  transition: background-color 0.3s ease;
 }
 
 /* Efecto hover para botones */
 .submit-button:hover,
 .cancel-button:hover {
-  background: #858585;
+  background: var(--accent-hover)!important; /*Forzando el cambio de color*/
 }

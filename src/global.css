@@ -6,20 +6,21 @@
 }
 
 :root {
-  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
-  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
-  --card-bg: #ffffff; /* Blanco puro para cards */
-  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
-  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
-  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
-  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
-  --border-color: #cce7ff; /* Celeste muy claro para bordes */
-  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
+  --primary-bg: #ffffff; /* AZUL MÁS OSCURO - fondo principal */
+  --secondary-bg: #6a98c0; /* CELESTE OSCURO para inputs */
+  --colorBarra: #ffffff; /* para cards */
+  --colorCard: #e0eaf5; /* para cards */
+  --colorBotones: #0f3a5c; /* AZUL MUY OSCURO de botones */
+  --accent-hover: #08243c; /* AZUL MAS OSCURO de hover */
+  --textprimario: #000000; /* NEGRO para texto */
+  --text-secondary: #061629; /* AZUL MUY OSCURO para texto secundario */
+  --border-color: #3a7bc8; /* CELESTE MUCHO MÁS OSCURO para bordes */
+  --shadow-color: rgba(15, 58, 92, 0.9); /* Sombra MUY OSCURA */
 }
 
 body {
   background-color: var(--primary-bg);
-  color: var(--text-primary);
+  color: var(--textprimario); 
   margin: 0;
   min-height: 100vh;
 }
@@ -33,11 +34,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--card-bg); 
+  background-color: var( --colorBarra); /* Color barra */
   padding: 10px 20px;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--textprimario); 
   z-index: 10;
-  box-shadow: 0 2px 8px var(--shadow-color); 
+  box-shadow: 0 2px 8px var(--textprimario); 
 }
 
 .navbar a {
@@ -47,13 +48,13 @@ body {
 }
 
 .navbar a.active {
-  color: var(--accent-color); 
-  text-shadow: 0 0 5px var(--accent-color); 
+  color: var(--text-secondary); /*Logo Home*/
+  text-shadow: 0 0 5px var(--colorBotones); 
 }
 
 /* Contenedores */
 .container {
-  background-color: var(--card-bg); 
+  background-color: var(--colorCard); 
   border-radius: 20px;
   padding: 30px 20px;
   width: 90%;
@@ -67,7 +68,7 @@ body {
 .logo {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: var(--text-primary); 
+  color: var(--textprimario); 
 }
 
 /* Inputs y botones */
@@ -82,18 +83,18 @@ input {
   border: 1px solid var(--border-color); 
   margin-top: 5px;
   background-color: var(--secondary-bg); 
-  color: var(--text-primary); 
+  color: var(--textprimario); 
 }
 
 input:focus {
   outline: none;
-  border-color: var(--accent-color); 
-  background-color: var(--card-bg); 
+  border-color: var(--colorBotones); 
+  background-color: var(--colorCard); /* CORREGIDO: colorCard en lugar de card-bg */
 }
 
 button {
   margin-top: 20px;
-  background-color: var(--accent-color);
+  background-color: var(--colorBotones);
   color: white; 
   border: none;
   padding: 10px 20px;
@@ -108,7 +109,7 @@ button:hover {
 
 /* Tarjetas */
 .card {
-  background-color: var(--card-bg);
+  background-color: var(--colorCard); /* CORREGIDO: colorCard en lugar de card-bg */
   padding: 20px;
   border-radius: 15px;
   margin-top: 20px;

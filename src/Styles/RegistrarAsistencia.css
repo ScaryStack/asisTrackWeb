@@ -1,20 +1,10 @@
-:root {
-  --primary-bg: #f0f8ff; /* Azul muy claro - fondo principal */
-  --secondary-bg: #e6f3ff; /* Celeste pastel - contenedores */
-  --card-bg: #ffffff; /* Blanco puro para cards */
-  --accent-color: #87ceeb; /* Celeste medio - botones y elementos importantes */
-  --accent-hover: #6ab7d8; /* Celeste más oscuro para hover */
-  --text-primary: #2c3e50; /* Azul oscuro para texto principal */
-  --text-secondary: #5d7a91; /* Azul grisáceo para texto secundario */
-  --border-color: #cce7ff; /* Celeste muy claro para bordes */
-  --shadow-color: rgba(135, 206, 235, 0.2); /* Sombra celeste suave */
-}
+
 
 /* Estilos para el título */
 .logo {
   text-align: center;
   margin: 100px 0 30px 0; 
-  color: var(--text-primary); 
+  color: var(--textprimario); 
   font-size: 2rem;
   font-weight: bold;
   width: 100%;
@@ -33,9 +23,9 @@
 
 .mapa-card-wrapper .card {
   min-height: auto;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 0;
-  background-color: var(--card-bg); 
+  background-color: var(--colorCard); 
   border: 1px solid var(--border-color);
   border-radius: 12px;
   box-shadow: 0 2px 8px var(--shadow-color)
@@ -49,7 +39,7 @@
 .mapa-titulo-card {
   text-align: center;
   margin: 0 0 20px 0;
-  color: var(--text-primary); 
+  color: var(--textprimario); 
   font-size: 1.5rem;
   font-weight: bold;
   width: 100%;
@@ -57,7 +47,7 @@
 
 /* Placeholder para el mapa */
 .mapa-placeholder {
-  background: var(--secondary-bg); 
+  background: var(--colorBarra); 
   height: 150px;
   display: flex;
   align-items: center;
@@ -77,7 +67,7 @@
 .boton-entrada {
   flex: 1;
   padding: 15px;
-  background: var(--accent-color); 
+  background: var(--colorBotones); 
   color: white;
   border: none;
   border-radius: 10px;
@@ -94,7 +84,7 @@
 .boton-salida {
   flex: 1;
   padding: 15px;
-  background: var(--accent-color); 
+  background: var(--colorBotones); 
   color: white; 
   border: none;
   border-radius: 10px;
@@ -114,7 +104,7 @@
 
 .info-ubicacion p {
   margin: 8px 0;
-  color: var(--text-primary); 
+  color: var(--textprimario); 
 }
 
 /* Estilos para ventanas emergentes */
@@ -132,7 +122,7 @@
 }
 
 .modal-content {
-  background: var(--card-bg); 
+  background: var(--colorCard); 
   padding: 25px;
   border-radius: 15px;
   text-align: center;
@@ -144,7 +134,7 @@
 
 .modal-content h3 {
   margin: 0 0 15px 0;
-  color: var(--text-primary); 
+  color: var(--textprimario); 
   font-size: 1.3rem;
 }
 
@@ -162,7 +152,7 @@
 
 .modal-btn-si {
   padding: 12px 25px;
-  background: var(--accent-color); 
+  background: var(--colorBotones); 
   color: white; 
   border: none;
   border-radius: 8px;
@@ -179,7 +169,7 @@
 
 .modal-btn-no {
   padding: 12px 25px;
-  background: var(--accent-color); 
+  background: var(--colorBotones); 
   color: white; 
   border: none;
   border-radius: 8px;
