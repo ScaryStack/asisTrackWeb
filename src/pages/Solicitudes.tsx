@@ -44,10 +44,30 @@ export const Solicitudes = () => {
   };
 
   const handleEnviar = () => {
-    // Lógica para enviar la solicitud
-    console.log({ tipo, fechaInicio, fechaFin, horaActual, motivo });
-    // Aquí iría la llamada a la API
+    const nuevaSolicitud = {
+    id: Date.now(), // ID único basado en timestamp
+    tipo: tipo as 'vacaciones' | 'permiso-salida',
+    fechaInicio,
+    fechaFin: tipo === 'vacaciones' ? fechaFin : undefined,
+    hora: horaActual,
+    motivo,
+    estado: 'pendiente', // Por defecto pendiente
+    fechaSolicitud: new Date().toISOString().split('T')[0]
   };
+
+   // Obtener solicitudes existentes
+  const solicitudesExistentes = JSON.parse(localStorage.getItem('misSolicitudes') || '[]');
+  
+  // Agregar nueva solicitud
+  const nuevasSolicitudes = [...solicitudesExistentes, nuevaSolicitud];
+  
+  // Guardar en localStorage
+  localStorage.setItem('misSolicitudes', JSON.stringify(nuevasSolicitudes));
+  
+  // Redirigir a Mis Solicitudes
+  navigate('/mis-solicitudes');
+};
+
 
   return (
     <>

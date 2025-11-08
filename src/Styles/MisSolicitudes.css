@@ -1,0 +1,91 @@
+.mis-solicitudes-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 80px; 
+}
+
+.mis-solicitudes-titulo {
+  text-align: center;
+  color: var(--textprimario);
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.solicitudes-card {
+  padding: 20px;
+}
+
+.solicitudes-subtitulo {
+  color: var(--colorprincipal);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.sin-solicitudes {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px 0;
+}
+
+.solicitudes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.solicitud-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--colorCard);
+}
+
+.solicitud-info {
+  flex: 1;
+}
+
+.solicitud-fechas {
+  font-weight: 600;
+  color: var(--textprimario);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.separador-fechas {
+  color: var(--text-secondary);
+}
+
+.solicitud-hora {
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.solicitud-motivo {
+  color: var(--textprimario);
+  margin-bottom: 8px;
+}
+
+.solicitud-fecha-solicitud {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.solicitud-estado {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+}   
