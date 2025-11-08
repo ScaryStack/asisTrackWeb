@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/shared/Navbar";
-import { Card } from "../components/shared/Card";
 import { NavigationButton } from "../components/shared/NavigationButton";
 import { InfoButton } from "../components/shared/InfoButton"; 
 
@@ -45,13 +44,12 @@ export const Home = () => {
         <p>Buen {momento}, {nombre}. Bienvenido a AsisTrack.</p>
         <h2>{hora}</h2>
 
-        <Card title="Registrar asistencia">
+          <h2 className="titleAsist">Registrar asistencia</h2>
           <p>Ubicación lugar de trabajo</p>
           <p>Día actual: {fecha}</p>
           <button onClick={handleMarcar}>Marcar asistencia</button>
-        </Card>
       </div>
-
+       
       <InfoButton />
 
       <NavigationButton />
