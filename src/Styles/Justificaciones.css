@@ -49,14 +49,25 @@
 }
 
 /* Estilos para la hora y fecha (solo lectura) */
-.time-display,
+.time-display{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--colorBarra)!important;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--colorBarra)!important;
+  color: var(--textprimario);
+  text-align: center;
+  font-weight: bold;
+}
+
 .date-display {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--colorBarra);
   border-radius: 5px;
   font-size: 1rem;
-  background-color: var(--secondary-bg);
+  background-color: var(--colorBarra);
   color: var(--textprimario);
   text-align: center;
   font-weight: bold;
@@ -66,14 +77,14 @@
 .motivo-textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--colorBarra);
   border-radius: 5px;
   font-size: 1rem;
   resize: none;
   height: 120px;
   box-sizing: border-box;
   font-family: inherit;
-  background-color: var(--secondary-bg);
+  background-color: var(--colorBarra);
   color: var(--textprimario);
 }
 
@@ -109,3 +120,5 @@
 .cancel-button:hover {
   background: var(--accent-hover);
 }
+
+
