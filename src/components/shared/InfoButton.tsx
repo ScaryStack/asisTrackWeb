@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { InfoList } from "./InfoList";
-import "../../Styles/InfoButton.css";
 
 
 export const InfoButton = () => {

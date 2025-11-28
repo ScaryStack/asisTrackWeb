@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Menu } from "./Menu";
-import "../../global.css";
 import { FaHome } from "react-icons/fa"; /*import de iconos*/ 
 
 
