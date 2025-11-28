@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUser, FaSignOutAlt, FaCertificate,FaHistory, FaListAlt, FaCog, FaAddressBook, FaInfoCircle } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 
+
 export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();

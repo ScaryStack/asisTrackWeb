@@ -4,6 +4,7 @@ import { NavigationButton } from "../components/shared/NavigationButton";
 import { InfoButton } from "../components/shared/InfoButton";
 import { Navbar } from "../components/shared/Navbar";
 
+import "../global.css"
 
 export const Perfil = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);

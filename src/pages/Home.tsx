@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/shared/Navbar";
 import { NavigationButton } from "../components/shared/NavigationButton";
-import { InfoButton } from "../components/shared/InfoButton"; 
-
+import { InfoButton } from "../components/shared/InfoButton";
+import "../global.css";
+import "../Styles/Menu.css";
+import "../Styles/InfoButton.css";
 
 export const Home = () => {
   const [hora, setHora] = useState("");

@@ -4,6 +4,7 @@ import { Navbar } from "../components/shared/Navbar";
 import { InfoButton } from "../components/shared/InfoButton";
 import { Card } from "../components/shared/Card";
 import "../Styles/RegistrarAsistencia.css";
+import "../global.css"
 
 
 export const RegistrarAsistencia = () => {

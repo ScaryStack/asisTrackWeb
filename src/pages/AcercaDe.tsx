@@ -1,5 +1,6 @@
 import { Navbar } from "../components/shared/Navbar";
 import "../Styles/AcercaDe.css";
+import "../global.css"
 
 export const AcercaDe = () => {
   return (

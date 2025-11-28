@@ -1,5 +1,6 @@
 import { Navbar } from "../components/shared/Navbar";
 import "../Styles/MisCertificados.css";
+import "../global.css"
 
 export const MisCertificados = () => {
   return (

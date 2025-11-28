@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
 import "../Styles/Justificaciones.css";
+import "../global.css"
 
 export const Justificaciones = () => {
   const { tipo } = useParams();
