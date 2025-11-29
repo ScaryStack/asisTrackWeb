@@ -1,142 +1,199 @@
-
-
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
 import "../Styles/Solicitudes.css";
+import { useAuth } from "../context/AuthContext";
+import { vacationApi } from "../api/vacationApi";
+import { permissionApi } from "../api/permissionApi";
+import type { VacationModel } from "../models/Vacation";
+import type { PermissionModel } from "../models/Permission";
+import "../global.css"
+
+type TipoSolicitud = "VACATION" | "PERMISSION";
 
 export const Solicitudes = () => {
-  const { tipo } = useParams();
   const navigate = useNavigate();
+  const { userId: contextUserId } = useAuth();
+  const userId = contextUserId || 1;
+
+  const [tipo, setTipo] = useState<TipoSolicitud>("VACATION");
   const [horaActual, setHoraActual] = useState("");
   const [fechaInicio, setFechaInicio] = useState("");
   const [fechaFin, setFechaFin] = useState("");
   const [motivo, setMotivo] = useState("");
 
-  useEffect(() => {
-    const usuario = localStorage.getItem("usuario");
-    if (!usuario) {
-      navigate("/");
-    }
+  // Fecha mínima (hoy)
+  const hoy = new Date().toISOString().split("T")[0];
 
-    // Actualizar hora cada segundo
+  // ----- función para saber si es día hábil -----
+  const esDiaHabil = (fecha: string) => {
+    const d = new Date(fecha).getDay();
+    return d !== 0 && d !== 6; // 0 domingo, 6 sábado
+  };
+
+  // ----- actualizar hora --------
+  useEffect(() => {
     const actualizarHora = () => {
       const ahora = new Date();
-      const hora = ahora.getHours().toString().padStart(2, '0');
-      const minutos = ahora.getMinutes().toString().padStart(2, '0');
-      const segundos = ahora.getSeconds().toString().padStart(2, '0');
-      setHoraActual(`${hora}:${minutos}:${segundos}`);
+      const h = ahora.getHours().toString().padStart(2, "0");
+      const m = ahora.getMinutes().toString().padStart(2, "0");
+      const s = ahora.getSeconds().toString().padStart(2, "0");
+      setHoraActual(`${h}:${m}:${s}`);
     };
-    
     actualizarHora();
     const interval = setInterval(actualizarHora, 1000);
-    
     return () => clearInterval(interval);
-  }, [navigate]);
+  }, []);
 
-  const getTitulo = () => {
-    switch(tipo) {
-      case 'vacaciones': return 'Vacaciones';
-      case 'permiso-salida': return 'Permiso de Salida';
-      default: return 'Solicitud';
+  // ------ VALIDACIÓN PRINCIPAL -----
+  const validarFechas = () => {
+    if (!fechaInicio) {
+      alert("Debes seleccionar una fecha");
+      return false;
+    }
+
+    if (fechaInicio < hoy) {
+      alert("No puedes seleccionar una fecha anterior a hoy");
+      return false;
+    }
+
+    if (! esDiaHabil(fechaInicio)) {
+      alert("Solo puedes seleccionar días hábiles (Lunes a Viernes)");
+      return false;
+    }
+
+    if (tipo === "VACATION") {
+      if (!fechaFin) {
+        alert("Debes seleccionar una fecha fin");
+        return false;
+      }
+
+      if (fechaFin < fechaInicio) {
+        alert("La fecha fin no puede ser menor a la fecha inicio");
+        return false;
+      }
+
+      if (!esDiaHabil(fechaFin)) {
+        alert("La fecha fin debe ser un día hábil (Lunes a Viernes)");
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  // ------- ENVIAR ---------
+  const handleEnviar = async () => {
+    if (!userId) return;
+
+    if (!validarFechas()) return;
+
+    try {
+      const now = new Date().toISOString();
+      const idRequest = Math.floor(Math.random() * 1000000);
+
+      if (tipo === "VACATION") {
+        const nuevaSolicitud: Partial<VacationModel> = {
+          daysAvailable: 0,
+          dateStart: fechaInicio,
+          dateFinish: fechaFin,
+          request: {
+            idRequest,
+            status: "PENDING",
+            requestType: "VACATION",
+            creationDate: now,
+            user: { userId },
+          },
+        };
+        await vacationApi.create(nuevaSolicitud);
+      } else if (tipo === "PERMISSION") {
+        const nuevaSolicitud: Partial<PermissionModel> = {
+          reason: motivo,
+          date: fechaInicio,
+          hour: horaActual,
+          request: {
+            idRequest,
+            status: "PENDING",
+            requestType: "PERMISSION",
+            creationDate: now,
+            user: { userId },
+          },
+        };
+        await permissionApi.create(nuevaSolicitud);
+      }
+
+      alert(`${tipo === "VACATION" ? "Vacaciones" : "Permiso"} enviado correctamente`);
+      navigate("/mis-solicitudes");
+
+    } catch (err: any) {
+      console.error(err);
+      alert("Error al enviar la solicitud");
     }
   };
-
-  const handleEnviar = () => {
-    const nuevaSolicitud = {
-    id: Date.now(), // ID único basado en timestamp
-    tipo: tipo as 'vacaciones' | 'permiso-salida',
-    fechaInicio,
-    fechaFin: tipo === 'vacaciones' ? fechaFin : undefined,
-    hora: horaActual,
-    motivo,
-    estado: 'pendiente', // Por defecto pendiente
-    fechaSolicitud: new Date().toISOString().split('T')[0]
-  };
-
-   // Obtener solicitudes existentes
-  const solicitudesExistentes = JSON.parse(localStorage.getItem('misSolicitudes') || '[]');
-  
-  // Agregar nueva solicitud
-  const nuevasSolicitudes = [...solicitudesExistentes, nuevaSolicitud];
-  
-  // Guardar en localStorage
-  localStorage.setItem('misSolicitudes', JSON.stringify(nuevasSolicitudes));
-  
-  // Redirigir a Mis Solicitudes
-  navigate('/mis-solicitudes');
-};
-
 
   return (
     <>
-      <Navbar/> 
+      <Navbar />
       <div className="solicitudes-container">
-        <h1 className="solicitudes-logo">{getTitulo()}</h1>
-        
+        <h1 className="solicitudes-logo">Solicitudes</h1>
         <Card>
           <div className="card-content">
-            {/* Fecha Inicio */}
+            
             <div className="form-group">
-              <label className="form-label">Fecha Inicio</label>
-              <input 
+              <label>Tipo de Solicitud</label>
+              <select 
+                value={tipo} 
+                onChange={(e) => setTipo(e.target.value as TipoSolicitud)}
+              >
+                <option value="VACATION">Vacaciones</option>
+                <option value="PERMISSION">Permiso de salida</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>{tipo === "VACATION" ? "Fecha Inicio" : "Fecha"}</label>
+              <input
                 type="date"
-                className="date-input"
+                min={hoy}
                 value={fechaInicio}
                 onChange={(e) => setFechaInicio(e.target.value)}
               />
             </div>
 
-            {/* Solo mostrar Fecha Fin para Vacaciones */}
-            {tipo === 'vacaciones' && (
-              <>
-                <div className="separator"></div>
-                <div className="form-group">
-                  <label className="form-label">Fecha Fin</label>
-                  <input 
-                    type="date"
-                    className="date-input"
-                    value={fechaFin}
-                    onChange={(e) => setFechaFin(e.target.value)}
-                  />
-                </div>
-              </>
+            {tipo === "VACATION" && (
+              <div className="form-group">
+                <label>Fecha Fin</label>
+                <input
+                  type="date"
+                  min={fechaInicio || hoy}
+                  value={fechaFin}
+                  onChange={(e) => setFechaFin(e.target.value)}
+                />
+              </div>
             )}
 
-            <div className="separator"></div>
+            {tipo === "PERMISSION" && (
+              <div className="form-group">
+                <label>Motivo</label>
+                <input
+                  type="text"
+                  value={motivo}
+                  onChange={(e) => setMotivo(e.target.value)}
+                />
+              </div>
+            )}
 
-            {/* Hora */}
             <div className="form-group">
-              <label className="form-label">Hora</label>
-              <div className="time-display">{horaActual}</div>
+              <label>Hora</label>
+              <div>{horaActual}</div>
             </div>
 
-            <div className="separator"></div>
-
-            {/* Mensaje */}
-            <div className="form-group">
-              <label className="form-label">Mensaje</label>
-              <textarea 
-                className="motivo-textarea"
-                placeholder="Escribe Motivo acá"
-                value={motivo}
-                onChange={(e) => setMotivo(e.target.value)}
-                rows={4}
-              />
-            </div>
-
-            <div className="separator"></div>
-
-            {/* Botones */}
             <div className="form-buttons">
-              <button className="submit-button" onClick={handleEnviar}>
-                Enviar
-              </button>
-              <button className="cancel-button" onClick={() => navigate("/navegacion")}>
-                Cancelar
-              </button>
+              <button onClick={handleEnviar}>Enviar</button>
+              <button onClick={() => navigate("/navegacion")}>Cancelar</button>
             </div>
+
           </div>
         </Card>
       </div>

@@ -1,5 +1,6 @@
 import { Navbar } from "../components/shared/Navbar";
 import "../Styles/Contacto.css";
+import "../global.css"
 
 export const Contacto = () => {
   return (

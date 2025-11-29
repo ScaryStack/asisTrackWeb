@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
 import "../Styles/Incidencia.css";
+import "../global.css"
 
 export const Incidencia = () => {
   const { tipo } = useParams(); 

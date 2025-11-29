@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Navbar } from "../components/shared/Navbar";
 import { Card } from "../components/shared/Card";
 import "../Styles/Navegacion.css";
+import "../global.css"
 
 
 
