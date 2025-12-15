@@ -18,19 +18,38 @@
   --shadow-color: rgba(15, 58, 92, 0.9); /* Sombra MUY OSCURA */
 }
 
+/* MODO OSCURO */
+:root[data-bs-theme="dark"] {
+  --primary-bg: #121212;
+  --secondary-bg: #1f1f1f;
+  --colorBarra: #1c1c1c;
+  --colorCard: #2c2c2c;
+  --colorBotones: #0f78d1;
+  --accent-hover: #084a7f;
+  --textprimario: #ffffff;
+  --text-secondary: #ffffff;
+  --border-color: #444444;
+  --shadow-color: rgba(0,0,0,0.5);
+}
+
+/* ======================
+   BODY
+====================== */
 body {
+  background-color: var(--primary-bg);
+  color: var(--textprimario);
+  min-height: 100vh;
   background-image: url("/src/assets/ImagenFondoHome.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  color: var(--textprimario); 
-  margin: 0;
-  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar */
+/* ======================
+   NAVBAR
+====================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -39,27 +58,31 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var( --colorBarra); /* Color barra */
+  background-color: var(--colorBarra);
   padding: 10px 20px;
-  border-bottom: 2px solid var(--textprimario); 
+  border-bottom: 2px solid var(--border-color); 
   z-index: 10;
-  box-shadow: 0 2px 8px var(--textprimario); 
+  box-shadow: 0 2px 8px var(--shadow-color); 
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar a {
   color: var(--text-secondary);
   font-size: 1.6rem;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.navbar a.active {
-  color: var(--text-secondary); /*Logo Home*/
-  text-shadow: 0 0 5px var(--colorBotones); 
+.navbar a.active svg,
+.navbar a svg {
+  color: var(--text-secondary); /* Iconos de navbar heredan color */
 }
 
-/* Contenedores */
+/* ======================
+   CONTAINERS / CARDS
+====================== */
 .container {
-  background-color: var(--colorCard); 
+  background-color: var(--colorCard);
   border-radius: 20px;
   padding: 30px 20px;
   width: 90%;
@@ -68,39 +91,47 @@ body {
   text-align: center;
   box-shadow: 0 0 10px var(--shadow-color);
   border: 1px solid var(--border-color); 
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: var(--textprimario); 
+.card {
+  background-color: var(--colorCard);
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Inputs y botones */
+/* ======================
+   INPUTS Y BOTONES
+====================== */
 input, button {
   font-family: inherit;
+  transition: all 0.3s ease;
 }
 
 input {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid var(--border-color); 
+  border: 1px solid var(--border-color);
   margin-top: 5px;
-  background-color: var(--secondary-bg); 
-  color: var(--textprimario); 
+  background-color: var(--secondary-bg);
+  color: var(--textprimario);
 }
 
 input:focus {
   outline: none;
-  border-color: var(--colorBotones); 
-  background-color: var(--colorCard); /* CORREGIDO: colorCard en lugar de card-bg */
+  border-color: var(--colorBotones);
+  background-color: var(--colorCard);
 }
 
 button {
   margin-top: 20px;
   background-color: var(--colorBotones);
-  color: white; 
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -109,30 +140,128 @@ button {
 }
 
 button:hover {
-  background-color: var(--accent-hover); 
+  background-color: var(--accent-hover);
 }
 
-/* Tarjetas */
-.card {
-  background-color: var(--colorCard); /* CORREGIDO: colorCard en lugar de card-bg */
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
-  border: 1px solid var(--border-color); 
-  box-shadow: 0 2px 8px var(--shadow-color); 
-  
+/* ======================
+   LOGOS Y TITULOS
+====================== */
+.logo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--textprimario);
 }
 
+/* ======================
+   HOVER SUAVE EN ICONOS Y LINKS
+====================== */
+a, button, input {
+  transition: all 0.3s ease;
+}
 
-/* Fondo de la página de inicio */
+/* ======================
+   FONDO HOME
+====================== */
 .home-background {
   min-height: 100vh;
   background-image: url("/src/assets/ImagenFondoHome.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* ======================
+   GLOBAL TRANSITIONS
+====================== */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+/* ======================
+    TOGGLE SWITCH (Modo Oscuro)
+====================== */
+
+/* Contenedor del ítem para Modo Oscuro (Alineación) */
+.menu-item.toggle-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px; /* Ajusta el padding para la alineación */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px; /* Ancho total del switch */
+  height: 24px; /* Alto total del switch */
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 0; /* Hace el cuadrado blanco invisible */
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-color); /* Fondo del switch (apagado) */
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  height: 16px; 
+  width: 16px;
+  left: 4px; /* Posición inicial */
+  bottom: 4px;
+  background-color: var(--textprimario); 
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Posición y color cuando está marcado  */
+input:checked + .slider {
+  background-color: var(--colorBotones); /* Color del switch encendido */
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px); /* Mueve el pulgar a la derecha */
+}
+
+/* Estilos para los iconos SVG (Sol/Luna) */
+.slider svg {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 4px;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  left: 4px; 
+  color: var(--colorBotones); /* Color del icono */
+}
+
+/* Mueve el icono (Sol o Luna)  */
+input:checked + .slider svg {
+    transform: translateX(24px); 
 }

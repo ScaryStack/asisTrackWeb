@@ -14,17 +14,29 @@ export const Perfil = () => {
 
   // GET del perfil
   useEffect(() => {
-    const loadPerson = async () => {
-      try {
-        const resp = await personApi.getById(1);
-        setPerson(resp.data);
-      } catch (error) {
-        console.error("Error al cargar perfil:", error);
-      }
-    };
+  const loadPerson = async () => {
+    try {
+      const storedUser = localStorage.getItem("user");
 
-    loadPerson();
-  }, []);
+      if (!storedUser) {
+        console.error("No hay usuario logueado");
+        return;
+      }
+
+      const user = JSON.parse(storedUser);
+      const userId = user.userId;
+
+      const resp = await personApi.getById(userId);
+      setPerson(resp.data);
+
+    } catch (error) {
+      console.error("Error al cargar perfil:", error);
+    }
+  };
+
+  loadPerson();
+}, []);
+
 
   // PUT del perfil
   const handleSave = async () => {

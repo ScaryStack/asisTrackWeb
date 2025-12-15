@@ -1,21 +1,41 @@
+/* CONTENEDOR PRINCIPAL */
 .Contacto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 80vh;
+  padding: 40px 20px;
   text-align: center;
-  padding: 20px;
 }
 
+/* TÍTULO PRINCIPAL */
 .Contacto-titulo {
   color: var(--textprimario);
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
 }
 
+/* TEXTO DESCRIPTIVO */
 .Contacto-mensaje {
   color: var(--text-secondary);
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+/* AJUSTES OPCIONALES PARA LAS CARDS */
+.card {
+  border-radius: 12px;
+}
+
+.card-title {
+  letter-spacing: 0.3px;
+}
+
+.card-text {
+  line-height: 1.6;
 }
