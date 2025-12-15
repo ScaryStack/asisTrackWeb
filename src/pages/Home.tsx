@@ -40,21 +40,21 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <h1 className="logo">AsisTrack</h1>
+        <h1 className="logo">AsisTrack</h1>
 
-      <div className="container">
-        <p>Buen {momento}, {nombre}. Bienvenido a AsisTrack.</p>
-        <h2>{hora}</h2>
+        <div className="container">
+          <p>Buen {momento}, {nombre}. Bienvenido a AsisTrack.</p>
+          <h2>{hora}</h2>
 
-          <h2 className="titleAsist">Registrar asistencia</h2>
-          <p>Ubicación lugar de trabajo</p>
-          <p>Día actual: {fecha}</p>
-          <button onClick={handleMarcar}>Marcar asistencia</button>
-      </div>
-       
-      <InfoButton />
+            <h2 className="titleAsist">Registrar asistencia</h2>
+            <p>Ubicación lugar de trabajo</p>
+            <p>Día actual: {fecha}</p>
+            <button onClick={handleMarcar}>Marcar asistencia</button>
+        </div>
+        
+        <InfoButton />
 
-      <NavigationButton />
+        <NavigationButton />
     </>
   );
 };
