@@ -5,17 +5,62 @@
   justify-content: center;
   min-height: 80vh;
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
+/* Título principal */
 .AcercaDe-titulo {
   color: var(--textprimario);
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
 }
 
+
+
+/* Texto descriptivo */
 .AcercaDe-mensaje {
   color: var(--text-secondary);
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-bottom: 18px;
+}
+
+/* Título sección diseñadores */
+.AcercaDe-subtitulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--textprimario);
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* Imagen de perfil */
+.perfil-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 12px;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+
+/* Hover sutil (opcional pero elegante) */
+.perfil-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste para modo oscuro Bootstrap */
+body[data-bs-theme="dark"] .perfil-img {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+body[data-bs-theme="dark"] .perfil-img:hover {
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.12);
 }
